@@ -41,19 +41,31 @@
                 <div>
                   <label>First name</label>
                   <input type="text" placeholder="First Name" />
+                  <div id = "firstNameError" class="validationError">
+                    Imie musi mieć 2-20 liter, pierwsza powinna być wielka
+                  </div>
                 </div>
                 <div>
                   <label>Last name</label>
                   <input type="text" placeholder="Full Name" />
+                  <div id = "lastNameError" class="validationError">
+                    Nazwisko musi mieć 2-20 liter, pierwsza powinna być wielka
+                  </div>
                 </div>
               </div>
               <div>
                 <label>Email</label>
                 <input type="email" placeholder="Email Adress" />
+                <div id = "emailError" class="validationError">
+                    to nie jest poprawny format adresu e-mail
+                  </div>
               </div>
               <div>
                 <label>Password</label>
                 <input type="password" placeholder="Pasword" />
+                <div id = "passwordError" class="validationError">
+                    Hasło musi mieć co najmniej 8 znaków, małą i wielką literę, cyfrę i znak specjalny
+                  </div>
               </div>
             </div>
             <div class="checkbox-wrapper">
