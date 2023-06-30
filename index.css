@@ -16,7 +16,7 @@ button {
   border-radius: 6px;
   background-color: #ff6939;
 } */
-input {
+/* input {
   font-size: 23px;
   margin-bottom: 10px;
   width: 100%;
@@ -24,8 +24,8 @@ input {
   border: 2px solid #edebf0;
   border-radius: 7px;
   display: flex;
-}
-input::placeholder {
+} */
+/* input::placeholder {
   padding-left: 20px;
   font-size: 23px;
   color: #190f27;
@@ -38,7 +38,7 @@ label {
   left: 15px;
   padding: 0px 7px;
   background-color: white;
-}
+} */
 
 /* .main-container {
   max-width: 1920px;
@@ -90,7 +90,7 @@ label {
   padding: 6px 0px;
 }
 
-.socia-media button {
+/* .socia-media button {
   background-color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -102,10 +102,10 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.socia-media > div > button > img {
+} */
+/* .socia-media > div > button > img {
   margin-right: 20px;
-}
+} */
 .divider {
   display: flex;
   align-items: center;
