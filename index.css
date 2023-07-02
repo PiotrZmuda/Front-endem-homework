@@ -142,6 +142,9 @@ label {
   align-items: center;
   padding-top: 10px;
 }
+.checkbox-wrapper > span > a{
+  color: #64606A;
+}
 .checkbox-wrapper > input {
   width: 14px;
   margin-bottom: 0px;
@@ -174,6 +177,9 @@ label {
   font-size: 14px;
   font-weight: 500;
   color: #64606a;
+}
+.log-in > a{
+  color:#64606a ;
 }
 @media only screen and (max-width: 1000px) {
   .input-name {
@@ -241,3 +247,9 @@ label {
     margin-bottom: 20px;
   }
 }
+/* @media only screen and (max-width: 320px) {
+  .main-container{
+    min-width: 320px;
+  }
+} */
+
