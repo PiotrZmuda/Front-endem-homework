@@ -47,7 +47,13 @@
 .checkbox-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 10px;
+}
+.checkbox-wrapper > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .checkbox-wrapper > span > input {
   width: 14px;
@@ -59,9 +65,14 @@
   display: inline-block;
   margin-right: 5px;
 }
-.checkbox-wrapper :nth-child(2) > a{
-    color:#64606A;
-    font-weight: 500
+.checkbox-wrapper > span :nth-child(2){
+  display: contents;
+  color:#64606A;
+  font-weight: 500
+}
+.checkbox-wrapper > a{
+  color:#64606A;
+  font-weight: 500
 }
 .log-in {
   margin-top: 15px;
