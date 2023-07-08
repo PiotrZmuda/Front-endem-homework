@@ -1,3 +1,5 @@
+const BASE_URL = "https://ds-elp2-be.herokuapp.com/";
+
 const form = document.getElementById("form");
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
@@ -8,7 +10,17 @@ const terms = document.getElementById("terms");
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // strona się nie przeładowuje
   if (validateRegisterForm()) {
-    console.log("request do backendu");
+    const data = {
+      // zapistywane są tutaj dane z formularza
+      firstName: firstName.value, // łapiemy nasze taki html lin3/8
+      lastName: lastName.value,
+      email: email.value,
+      password: password.value,
+    };
+    register(data);
+    //...
+    localStorage.setItem("registered_email", email.value) // wysyłamy do local story naszego maila
+    //..
   } else {
     console.log("nie ma requesta - błąd walidacji");
   }
@@ -97,3 +109,23 @@ function validateRegisterForm() {
 
   return shuldProceed(proceed);
 }
+
+async function register(data) {
+  try {
+    const response = await fetch(`${BASE_URL}auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (response.status === 200 || 201) {// powinno być 201 test!!
+      const result = await response.json();
+      console.log("result", result);
+      window.location.href = "confirm.html";
+    } else if (response.status === 303 || 404) {
+      return;
+    }
+  } catch (error) {
+    console.log("error", error);
+  }
+}
+// window.location.href = "confirm.html";

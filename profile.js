@@ -1,18 +1,33 @@
-const userContent = document.getElementById("userContent")
-const innerContemt = document.getElementById("innerContent")
-const logoutButton = document.querySelector(".logout")
+const access_token = localStorage.getItem("access_token"); // mamy go w Application
+const BASE_URL = "https://ds-elp2-be.herokuapp.com/";
 
-const loggedOut = true
+const userContent = document.getElementById("userContent");
+const innerContemt = document.getElementById("innerContent");
+const logoutButton = document.querySelector(".logout");
 
-if(loggedOut){
-    userContent.innerHTML = `<h3>Coś poszło nie tak.</h3> <p>Taki użytkownik nie istnieje lub wystąpił błąd podczas logowania. Spróbuj ponownie później</p> <a href="login.html">Wróć do strony logowania</a>`
+if (!access_token) {
+  userContent.innerHTML = `<h3>Coś poszło nie tak.</h3>
+    <p>Taki użytkownik nie istnieje, lub wystąpił błąd podczas logowania. Spróboj poniewnie później</p>
+    <a href="login.html">Wróć do strony logowania</a>`;
 } else {
-    console.log("request")
+  getUser();
 }
 
-logoutButton.addEventListener("click", ()=>{
-    logout()
-})
-function logout(){
-    window.location.href = "login.html"
+async function getUser() {
+  try {
+    const response = await fetch(`${BASE_URL}profile`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+        "Content-type": "application/json",
+      },
+    }); // profile ze swegger
+    const result = await response.json();
+    result.forEach((item) => {
+        innerContemt.innerHTML += `<li>${item.firstName}, ${item.lastName}</li>`
+    })
+    console.log(result) // obj któy chcemy wyświetlić na fronice
+  } catch (error) {
+    console.log(error);
+  }
 }

@@ -1,3 +1,5 @@
+const BASE_URL = "https://ds-elp2-be.herokuapp.com/";
+
 const form = document.getElementById("form");
 const email = document.getElementById("email"); //email value odnośi się do tego selektora
 const password = document.getElementById("password");
@@ -7,7 +9,11 @@ const remember = document.querySelector("#rememberCheckbox");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (validateLoginForm()) {
-    console.log("request do backendu");
+    const data = {
+      email: email.value,
+      password: password.value,
+    };
+    login(data);
   } else {
     console.log("nie ma requesta - błąd walidacji");
   }
@@ -52,5 +58,28 @@ function validateLoginForm() {
     }
     return true;
   }
-  return shuldProceed(proceed) // kontekstem jest validateLoginForm()
+  return shuldProceed(proceed); // kontekstem jest validateLoginForm()
+}
+
+async function login(data){
+  try{
+    const response = await fetch(`${BASE_URL}auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    const result = await response.json()
+    console.log(result) //acces token
+    if(result.message == "Unauthorized"){
+      return;
+    }else{
+      localStorage.setItem("access_token", result.access_token  ) // tu przechowujemy nasz token, klucz dostępu
+      // window.location.href ="/profile.html"
+    }
+
+  } catch(error){
+    console.error(error)
+  }
 }
