@@ -13,6 +13,7 @@ form.addEventListener("submit", (event) => {
       email: email.value,
       password: password.value,
     };
+
     login(data);
   } else {
     console.log("nie ma requesta - błąd walidacji");
@@ -61,25 +62,29 @@ function validateLoginForm() {
   return shuldProceed(proceed); // kontekstem jest validateLoginForm()
 }
 
-async function login(data){
-  try{
+async function login(data) {
+  try {
     const response = await fetch(`${BASE_URL}auth/login`, {
       method: "POST",
       headers: {
-        "Content-type": "application/json"
+        "Content-type": "application/json",
       },
-      body: JSON.stringify(data)
-    })
-    const result = await response.json()
-    console.log(result) //acces token
-    if(result.message == "Unauthorized"){
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    console.log(result); //acces token
+    if (result.message == "Unauthorized") {
       return;
-    }else{
-      localStorage.setItem("access_token", result.access_token  ) // tu przechowujemy nasz token, klucz dostępu
-      // window.location.href ="/profile.html"
+    } else {
+      if (remember.checkd) {
+        localStorage.setItem("remember_user", 1);
+      } else {
+        localStorage.setItem("remember_user", 0);
+      }
+      localStorage.setItem("access_token", result.access_token); // tu przechowujemy nasz token, klucz dostępu
+      window.location.href ="/profile.html"
     }
-
-  } catch(error){
-    console.error(error)
+  } catch (error) {
+    console.error(error);
   }
 }

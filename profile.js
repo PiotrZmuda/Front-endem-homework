@@ -31,3 +31,13 @@ async function getUser() {
     console.log(error);
   }
 }
+
+logoutButton.addEventListener("click", () => {
+    logout()
+})
+
+function logout(){
+    localStorage.removeItem("access_token")
+    localStorage.removeItem("remember_user")
+    window.localStorage.href = "/login.html"
+}
