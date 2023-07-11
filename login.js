@@ -76,7 +76,7 @@ async function login(data) {
     if (result.message == "Unauthorized") {
       return;
     } else {
-      if (remember.checkd) {
+      if (remember.checked) {
         localStorage.setItem("remember_user", 1);
       } else {
         localStorage.setItem("remember_user", 0);

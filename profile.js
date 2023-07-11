@@ -39,5 +39,17 @@ logoutButton.addEventListener("click", () => {
 function logout(){
     localStorage.removeItem("access_token")
     localStorage.removeItem("remember_user")
-    window.localStorage.href = "/login.html"
+    window.location.href = "/login.html"
 }
+
+const remember = Number(localStorage.getItem("remember_user"))
+const rememberFlag = Boolean(remember)
+
+window.addEventListener("beforeunload", function(){
+  if(rememberFlag){
+    return
+  }else{
+    this.localStorage.removeItem("access_token")
+    this.localStorage.removeItem("remember_uset")
+  }
+})
