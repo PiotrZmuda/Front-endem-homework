@@ -42,6 +42,9 @@ button {
   padding: 15px 32px;
   height: 100vh;
 }
+.left-container {
+  position: relative;
+}
 
 .validationError {
   display: none;
@@ -114,4 +117,60 @@ label {
 
 .error {
   border: 1px solid red;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  transition: 0.3s;
+  opacity: 0;
+  border-right: 20px solid #ff6939;
+  border-bottom: 20px solid rgb(0, 0, 0, 0);
+  width: 0;
+  height: 0;
+}
+
+.tooltip:hover::after,
+.tooltip:hover::before {
+  opacity: 1;
+}
+.tooltip::after {
+  content: "Opcja niedostępna";
+  position: absolute;
+  top: -45px;
+  left: -10px;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 7px;
+  width: 150px;
+  height: 40px;
+  background-color: #ff6939;
+  line-height: 40px;
+  color: #190f27;
+  cursor: context-menu;
+}
+
+.notification {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  /* opacity: 0; */
+  transition: 0.3s ease-in-out;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  width: 100%;
+  max-width: 528px;
+  height: 40px;
+  background-color: aqua;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
 }

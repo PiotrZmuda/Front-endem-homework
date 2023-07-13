@@ -10,14 +10,14 @@ const terms = document.getElementById("terms");
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // strona się nie przeładowuje
   if (validateRegisterForm()) {
-    const data = {
-      // zapistywane są tutaj dane z formularza
+    //tworzymy sobie obiekt który chcemy wysłać na backend
+    const data = {// wartości wpisane w formularz są zbierane do tego obiektu data
       firstName: firstName.value, // łapiemy nasze taki html lin3/8
       lastName: lastName.value,
       email: email.value,
       password: password.value,
     };
-    register(data);
+    register(data); // obj data jest przekazywany do tej funkcji
     //...
     localStorage.setItem("registered_email", email.value) // wysyłamy do local story naszego maila
     //..
@@ -128,4 +128,3 @@ async function register(data) {
     console.log("error", error);
   }
 }
-// window.location.href = "confirm.html";
