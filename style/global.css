@@ -27,11 +27,12 @@ button {
 .right-section {
   width: 100%;
   max-width: 55%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-width: 250px;
 }
 
 .left-section {
@@ -40,7 +41,8 @@ button {
   justify-content: center;
   width: 45%;
   padding: 15px 32px;
-  height: 100vh;
+  /* height: 100vh; */
+  min-width: 250px;
 }
 .left-container {
   position: relative;
@@ -108,12 +110,7 @@ label {
 .visible {
   display: block;
 }
-.show {
-  opacity: 1;
-}
-.show a {
-  display: inline;
-}
+
 
 .error {
   border: 1px solid red;
@@ -128,18 +125,14 @@ label {
   position: absolute;
   top: -5px;
   left: 0;
-  transition: 0.3s;
   opacity: 0;
+  transition: 0.3s;
   border-right: 20px solid #ff6939;
   border-bottom: 20px solid rgb(0, 0, 0, 0);
   width: 0;
   height: 0;
 }
 
-.tooltip:hover::after,
-.tooltip:hover::before {
-  opacity: 1;
-}
 .tooltip::after {
   content: "Opcja niedostępna";
   position: absolute;
@@ -155,22 +148,143 @@ label {
   color: #190f27;
   cursor: context-menu;
 }
+.tooltip:hover::after,
+.tooltip:hover::before {
+  opacity: 1;
+}
+.blur {
+  filter: blur(10px);
+  pointer-events: none;
+}
 
 .notification {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  /* opacity: 0; */
+  top: -50px;
+  /* top: 0; */
+  opacity: 0;
   transition: 0.3s ease-in-out;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   width: 100%;
-  max-width: 528px;
+  /* max-width: 528px; */
   height: 40px;
-  background-color: aqua;
+  background-color: #fff;
   line-height: 40px;
   text-align: center;
   font-size: 14px;
   font-weight: 500;
+
+}
+
+.notification a {
+  display: none;
+}
+
+.success {
+  background-color: #cfdbd9;
+  color: #284642;
+}
+.success::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  display: block;
+  width: 20%;
+  height: 40px;
+  background-color: #cfdbd9;
+}
+.format,
+.failed {
+  background-color: #f0eeed;
+  color: #ce0737;
+}
+.format::before,
+.failed::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  display: block;
+  width: 20%;
+  height: 40px;
+  background-color: #f0eeed;  
+}
+
+.popup {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
+.showPopup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  /* display: block; */
+  position: relative;
+  animation: rotateX 1s infinite linear;
+  border: 10px solid #fff;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  animation: rotate 0.5s infinite linear reverse;
+  border: 10px solid #ff6939;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  animation: rotate 1s infinite linear;
+  border: 10px solid #fff;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.show {
+  opacity: 1;
+}
+.show a {
+  display: inline;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }

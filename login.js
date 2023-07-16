@@ -6,6 +6,11 @@ const password = document.getElementById("password");
 
 const remember = document.querySelector("#rememberCheckbox");
 
+const success = document.getElementById("success");
+const failed = document.getElementById("failed");
+const main = document.querySelector(".main-container");
+const popup = document.querySelector("#popup");
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (validateLoginForm()) {
@@ -76,16 +81,36 @@ async function login(data) {
     if (result.message == "Unauthorized") {
       return;
     } else {
-      if (remember.checked) {
-        localStorage.setItem("remember_user", 1);
-      } else {
-        localStorage.setItem("remember_user", 0);
-      }
-      localStorage.setItem("access_token", result.access_token); // tu przechowujemy nasz token, klucz dostępu
-      window.location.href ="/profile.html"
+      
     }
   } catch (error) {
     console.error(error);
   }
 }
 
+const handleSucess = function (result) {
+  main.classList.add("blur");
+  popup.classList.add("showPopup");
+  setTimeout(() => {
+    main.classList.remove("blur");
+    popup.classList.remove("showPopup");
+    localStorage.setItem("access_token", result.access_token);
+    success.classList.add("show");
+    setTimeout(() => {
+      success.classList.remove("show");
+      if (remember.checked) {
+        localStorage.setItem("remember_user", 1);
+      } else {
+        localStorage.setItem("remember_user", 0);
+      }
+      window.location.href = "profile.html";
+    }, 1500);
+  }, 1500);
+};
+
+const handlFailure = function () {
+  failed.classList.add("show");
+  setTimeout(() => {
+    failed.classList.remove("show");
+  }, 1500);
+};
