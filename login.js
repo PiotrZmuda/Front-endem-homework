@@ -18,10 +18,9 @@ form.addEventListener("submit", (event) => {
       email: email.value,
       password: password.value,
     };
-
     login(data);
   } else {
-    console.log("nie ma requesta - błąd walidacji");
+    return;
   }
 });
 
@@ -79,16 +78,16 @@ async function login(data) {
     const result = await response.json();
     console.log(result); //acces token
     if (result.message == "Unauthorized") {
-      return;
+      handleFailure();
     } else {
-      
+      handleSuccess(result);
     }
   } catch (error) {
     console.error(error);
   }
 }
 
-const handleSucess = function (result) {
+const handleSuccess = function (result) {
   main.classList.add("blur");
   popup.classList.add("showPopup");
   setTimeout(() => {
@@ -108,7 +107,7 @@ const handleSucess = function (result) {
   }, 1500);
 };
 
-const handlFailure = function () {
+const handleFailure = function () {
   failed.classList.add("show");
   setTimeout(() => {
     failed.classList.remove("show");

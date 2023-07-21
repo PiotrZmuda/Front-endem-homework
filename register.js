@@ -139,18 +139,6 @@ async function register(data) {
   }
 }
 
-// const handleSucess = function () {
-//   main.classList.add("blur");
-//   popup.classList.add("showPopup");
-//   setTimeout(() => {
-//     success.classList.add("show");
-//     setTimeout(() => {
-//       success.classList.add("show");
-//       window.location.href = "confirm.html";
-//     }, 1500);
-//   }, 1500);
-// };
-
 const handleSuccess = function () {
   main.classList.add("blur");
   popup.classList.add("showPopup");
@@ -173,7 +161,7 @@ const handlFailure = function (message) {
   }, 1500);
 };
 
-handlFailure("Piotrek jest geniuszem");
+// handlFailure("Piotrek jest geniuszem");
 // handleSuccess()
 
 //1:31

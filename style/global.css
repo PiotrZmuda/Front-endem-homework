@@ -27,7 +27,6 @@ button {
 .right-section {
   width: 100%;
   max-width: 55%;
-  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +40,6 @@ button {
   justify-content: center;
   width: 45%;
   padding: 15px 32px;
-  /* height: 100vh; */
   min-width: 250px;
 }
 .left-container {
@@ -162,13 +160,11 @@ label {
   left: 0;
   right: 0;
   top: -50px;
-  /* top: 0; */
   opacity: 0;
   transition: 0.3s ease-in-out;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   width: 100%;
-  /* max-width: 528px; */
   height: 40px;
   background-color: #fff;
   line-height: 40px;

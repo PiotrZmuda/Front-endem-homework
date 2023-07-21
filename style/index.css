@@ -103,7 +103,6 @@
   .right-section {
     margin-bottom: 40px;
   }
-
   .input-name {
     display: flex;
     flex-direction: column;
@@ -127,7 +126,7 @@
   }
   .right-section img:nth-child(2) {
     /* margin: 65px; */
-    margin: 10%;
+    margin: 50px;
     width: 200px;
     height: 260px;
   }
@@ -153,10 +152,9 @@
     height: 38vh;
   }
   .right-section img:nth-child(2) {
-    /* margin: 50px;
-    margin: 10%; */
-    width: 160px;
-    height: 210px;
+    margin: 40px;
+    width: 130px;
+    height: 180px;
   }
   .input-name {
     display: flex;

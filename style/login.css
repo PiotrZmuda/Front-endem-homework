@@ -114,9 +114,9 @@
     justify-content: flex-start;
   }
   .right-section img:nth-child(2) {
-    margin: 10%;
-    width: 200px;
-    height: 260px;
+    margin: 50px;
+    width: 170px;
+    height: 230px;
   }
   .left-section {
     display: flex;
@@ -127,7 +127,20 @@
 }
 
 @media only screen and (max-width: 550px) {
+
+  .left-container > :nth-child(3) {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+  }
   .right-section {
     height: 38vh;
+  }
+  .right-section img:nth-child(2) {
+    margin: 40px;
+    width: 120px;
+    height: 170px;
   }
 }
