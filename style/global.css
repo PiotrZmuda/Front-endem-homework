@@ -18,6 +18,8 @@ button {
 }
 
 .main-container {
+  min-height: 100vh;
+  overflow: hidden;
   max-width: 1920px;
   height: auto;
   display: flex;
@@ -41,6 +43,8 @@ button {
   width: 45%;
   padding: 15px 32px;
   min-width: 250px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .left-container {
   position: relative;
@@ -109,7 +113,6 @@ label {
   display: block;
 }
 
-
 .error {
   border: 1px solid red;
 }
@@ -171,7 +174,6 @@ label {
   text-align: center;
   font-size: 14px;
   font-weight: 500;
-
 }
 
 .notification a {
@@ -204,7 +206,7 @@ label {
   display: block;
   width: 20%;
   height: 40px;
-  background-color: #f0eeed;  
+  background-color: #f0eeed;
 }
 
 .popup {
@@ -274,7 +276,6 @@ label {
 .show a {
   display: inline;
 }
-
 
 @keyframes rotate {
   from {
