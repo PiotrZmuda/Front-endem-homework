@@ -39,7 +39,7 @@ logoutButton.addEventListener("click", () => {
 function logout(){
     localStorage.removeItem("access_token")
     localStorage.removeItem("remember_user")
-    window.location.href = "/login.html"
+    window.location.href = "./login.html"
 }
 
 const remember = Number(localStorage.getItem("remember_user"))
