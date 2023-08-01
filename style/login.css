@@ -3,18 +3,12 @@
   width: 100%;
 }
 
-.right-section img:nth-child(2) {
-  position: absolute;
-  width: 269.94px;
-  height: 330.74px;
-}
-
- .left-container > :nth-child(3) {
+.left-container > :nth-child(3) {
   margin-bottom: 40px;
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
-} 
+}
 .socia-media {
   width: 100%;
 }
@@ -65,16 +59,16 @@
   display: inline-block;
   margin-right: 5px;
 }
-.checkbox-wrapper > span :nth-child(2){
+.checkbox-wrapper > span :nth-child(2) {
   display: contents;
-  color:#64606A;
-  font-weight: 500
+  color: #64606a;
+  font-weight: 500;
 }
-.checkbox-wrapper > a{
-  color:#64606A;
-  font-weight: 500
+.checkbox-wrapper > a {
+  color: #64606a;
+  font-weight: 500;
 }
-.register-button > a >button {
+.action-button > a > button {
   margin: 25px 0px 25px 0px;
   width: 100%;
   height: 69px;
@@ -98,50 +92,4 @@
   border-bottom: 3px solid #284642;
   text-decoration: none;
   color: #64606a;
-}
-
-@media only screen and (max-width: 785px) {
-  .main-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .right-section {
-    width: 100%;
-    max-width: 100%;
-    height: 50vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 261px;
-  }
-  .right-section img:nth-child(2) {
-    margin: 50px;
-    width: 170px;
-    height: 230px;
-  }
-  .left-section {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 45px 32px;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-
-  .left-container > :nth-child(3) {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-  }
-  .right-section {
-    height: 38vh;
-  }
-  .right-section img:nth-child(2) {
-    margin: 40px;
-    width: 120px;
-    height: 170px;
-  }
 }

@@ -3,12 +3,6 @@
   width: 100%;
 }
 
-.right-section img:nth-child(2) {
-  position: absolute;
-  width: 269.94px;
-  height: 330.74px;
-}
-
 .left-container > :nth-child(3) {
   margin-bottom: 40px;
   font-weight: 500;
@@ -46,7 +40,6 @@
 }
 .input-name {
   display: flex;
-  /* padding: 20px 0px; */
   justify-content: space-between;
 }
 .input-name > div:not(:last-child) {
@@ -74,7 +67,7 @@
   margin-right: 10px;
 }
 
-.register-button > button {
+.action-button > button {
   margin: 25px 0px 25px 0px;
   width: 100%;
   height: 69px;
@@ -86,9 +79,6 @@
   font-weight: 700;
   font-size: 18px;
 }
-/* .divider {
-  margin: 5px 0px 20px 0px;
-} */
 .log-in {
   margin-top: 15px;
   font-family: Roboto;
@@ -100,71 +90,12 @@
   color: #64606a;
 }
 @media only screen and (max-width: 1000px) {
-  .right-section {
-    margin-bottom: 40px;
-  }
-  .input-name {
-    display: flex;
-    flex-direction: column;
-  }
-  .input-name > div:not(:last-child) {
-    margin-right: 0%;
-  }
-}
-@media only screen and (max-width: 785px) {
-  .main-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .right-section {
-    min-height: 261px;
-    width: 100%;
-    max-width: 100%;
-    height: 50vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .right-section img:nth-child(2) {
-    /* margin: 65px; */
-    margin: 50px;
-    width: 200px;
-    height: 260px;
-  }
-  .left-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    padding: 15px 32px;
-  }
-  .input-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .input-name > div:not(:last-child) {
-    margin-right: 5%;
-  }
-}
 
-@media only screen and (max-width: 550px) {
-  .right-section {
-    height: 38vh;
-  }
-  .right-section img:nth-child(2) {
-    margin: 40px;
-    width: 130px;
-    height: 180px;
-  }
   .input-name {
     display: flex;
     flex-direction: column;
   }
   .input-name > div:not(:last-child) {
     margin-right: 0%;
-  }
-  .left-container > div:first-child {
-    margin: 20px 0px 20px 0px;
   }
 }

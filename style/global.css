@@ -10,7 +10,6 @@ button {
 }
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: blue;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 6px;
@@ -35,7 +34,11 @@ button {
   flex-direction: column;
   min-width: 250px;
 }
-
+.right-section img:nth-child(2) {
+  position: absolute;
+  width: 269.94px;
+  height: 330.74px;
+}
 .left-section {
   display: flex;
   flex-direction: column;
@@ -49,13 +52,6 @@ button {
 .left-container {
   position: relative;
 }
-
-.validationError {
-  display: none;
-  font-size: 10px;
-  margin-top: 10px;
-  color: #ce0737;
-}
 .socia-media button {
   background-color: #fff;
   font-size: 14px;
@@ -68,10 +64,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.socia-media > div > button > img {
-  margin-right: 20px;
 }
 input {
   padding-left: 20px;
@@ -95,8 +87,7 @@ label {
   padding: 0px 7px;
   background-color: white;
 }
-
-.register-button > button {
+.action-button > button {
   margin: 25px 0px 25px 0px;
   width: 100%;
   height: 69px;
@@ -107,6 +98,18 @@ label {
   border: none;
   font-weight: 700;
   font-size: 18px;
+}
+ 
+
+.validationError {
+  display: none;
+  font-size: 10px;
+  margin-top: 10px;
+  color: #ce0737;
+}
+
+.socia-media > div > button > img {
+  margin-right: 20px;
 }
 
 .visible {
@@ -283,5 +286,63 @@ label {
   }
   to {
     transform: rotateZ(360deg);
+  }
+}
+
+@media only screen and (max-width: 785px) {
+  .main-container {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-section {
+    min-height: 261px;
+    width: 100%;
+    max-width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .right-section img:nth-child(2) {
+    margin: 50px;
+    width: 180px;
+    height: 240px;
+  }
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 32px;
+  }
+  .input-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .input-name > div:not(:last-child) {
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .right-section {
+    height: 38vh;
+  }
+  .right-section img:nth-child(2) {
+    margin: 40px;
+    width: 130px;
+    height: 180px;
+  }
+  .input-name {
+    display: flex;
+    flex-direction: column;
+  }
+  .input-name > div:not(:last-child) {
+    margin-right: 0%;
+  }
+  .left-container > div:first-child {
+    margin: 20px 0px 20px 0px;
   }
 }
