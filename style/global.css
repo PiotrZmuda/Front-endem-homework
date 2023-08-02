@@ -229,9 +229,8 @@ label {
 }
 
 .loader {
-  /* display: block; */
   position: relative;
-  animation: rotateX 1s infinite linear;
+  animation: rotate 1s infinite linear;
   border: 10px solid #fff;
   border-top-color: transparent;
   border-right-color: transparent;
